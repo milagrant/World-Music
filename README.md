@@ -22,7 +22,7 @@ pip install numpy
 ``
 - librosa v. 0.6.1
 ``
-pip install librosa==0.5.1
+pip install librosa==0.6.1
 ``
 - joblib v. 0.11
 ``
