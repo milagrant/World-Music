@@ -12,9 +12,9 @@ python subset.py
 ``
 This might take a few minutes since 10k files are processed.
 
-####Extracting features
+#### Extracting features
 
-#####Get dependencies:
+###### Get dependencies:
 - python v. 2.7
 - numpy
 ``
@@ -32,18 +32,18 @@ pip install joblib==0.11 --force-reinstall
 ``
 apt get ffmpeg
 ``
-#####Create the following structure in the project's root directory:
+###### Create the following structure in the project's root directory:
 ├── csvfiles\
 `` ``    ├── rhythm\
 `` ``    ├── tembre\
 `` ``    ├── harmony\
 `` ``    └── melody
 
-#####Run: 
+###### Run: 
 ``
 python extract_features.py
 ``
-#####Changes to original code:
+###### Changes to original code:
 - util/smoothiescore.py: Change operand *-* to *~* 
 - extract_features.py: set write_output to True
 - util/mfccs.py: Change *librosa.core.logamplitude* to *librosa.amplitude_to_db*
