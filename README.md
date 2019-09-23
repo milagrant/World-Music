@@ -35,7 +35,7 @@ apt get ffmpeg
 ###### Create the following structure in the project's root directory:
 ├── csvfiles\
 `` ``    ├── rhythm\
-`` ``    ├── tembre\
+`` ``    ├── timbre\
 `` ``    ├── harmony\
 `` ``    └── melody
 
@@ -45,5 +45,5 @@ python extract_features.py
 ``
 ###### Changes to original code:
 - util/smoothiescore.py: Change operand *-* to *~* 
-- extract_features.py: set write_output to True
+- extract_features.py: set *write_output* to *True*
 - util/mfccs.py: Change *librosa.core.logamplitude* to *librosa.amplitude_to_db*
