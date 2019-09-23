@@ -8,7 +8,7 @@ def copy_rename(name, src_dir):
     Copy audio file to audio folder and rename it in accordance with audiolist.txt
     """
     old_name = "SampleAudio.mp3"
-    dst_dir = "data/audio"
+    dst_dir = "audio"
     src_file = os.path.join(src_dir, old_name)
     shutil.copy(src_file, dst_dir)
 
