@@ -47,3 +47,11 @@ python extract_features.py
 - util/smoothiescore.py: Change operand *-* to *~* 
 - extract_features.py: set *write_output* to *True*
 - util/mfccs.py: Change *librosa.core.logamplitude* to *librosa.amplitude_to_db*
+
+###### Create lists of csv files:
+This will create four text files in data/ pointing to the csv files containing the extracted features.
+
+Run
+``
+python create_csvfiles_lists.py
+``
