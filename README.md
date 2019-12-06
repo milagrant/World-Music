@@ -5,6 +5,7 @@
 
 ### Data Set Analysis
 Our analysis of the data set used in this project can be found in *all_metadata.xlsx*.
+*instrument_ratio.xlsx* holds further analysis of the instruments used in the data set.
 
 ### Reproducing results
 
