@@ -1,7 +1,7 @@
 # World-Music
 ### Project in DD2430 at KTH
 
-#### All credits given to Maria Panteli et.al. This project is based on their original project which can be found [here](https://code.soundsoftware.ac.uk/projects/feature-space-world-music) 
+#### All credit goes to Maria Panteli et.al. This project is based on their original project which can be found [here](https://code.soundsoftware.ac.uk/projects/feature-space-world-music) 
 
 ### Data Set Analysis
 Our analysis of the data set used in this project can be found in *all_metadata.xlsx*.
