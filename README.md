@@ -73,7 +73,7 @@ python load_dataset.py
 ``
 
 ###### Changes to original code:
-- write here
+See comments in *load_dataset.py* and *util/process_frames.py*
 
 #### Train classifiers and evaluate them using test set
 Not that this takes time, so make some coffee!
@@ -82,6 +82,10 @@ Run
 ``
 python map_space.py
 ``
+
+###### Changes to original code:
+- Change number of principal components (best_npc) to 26.
+- Clean up pickle, see comments in *util/space_mapper.py*
 
 To print results, run:
 ``
