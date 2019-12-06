@@ -72,6 +72,9 @@ Run
 python load_dataset.py
 ``
 
+###### Changes to original code:
+- write here
+
 #### Train classifiers and evaluate them using test set
 Not that this takes time, so make some coffee!
 
