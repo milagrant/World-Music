@@ -36,12 +36,11 @@ def extract_selected_features(filename=None):
     return mfccs, scalet, pitchb, chroma
 
   
-def extract_features_for_filelist(filelist=None, write_output=True, output_dir='csvfiles'):
+def extract_features_for_filelist(filelist=None, write_output=False, output_dir='csvfiles'):
     """ extracts selected features for each file in filelist. 
         Set write_output to True to write feature csv files. 
     """    
     for filename in filelist:
-	print(filename)
         mfccs, scalet, pitchb, chroma = extract_selected_features(filename)
         if write_output:
             csvname = os.path.splitext(os.path.basename(filename))[0] + '.csv'
@@ -55,4 +54,4 @@ def extract_features_for_filelist(filelist=None, write_output=True, output_dir='
 if __name__ == '__main__':
     with open(os.path.join('data', 'audiolist.txt'), 'rb') as f:
         filelist = [line.strip('\n') for line in f.readlines()]
-    extract_features_for_filelist(filelist)
+    extract_features_for_filelist(filelist, write_output=True)

@@ -13,7 +13,7 @@ version. See the file COPYING included with this distribution for more informati
 
 import numpy
 import random
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA #Fixed the import error_Group_4
 from sklearn.decomposition.pca import PCA
 from sklearn.decomposition import NMF
 from sklearn.preprocessing import scale
@@ -65,15 +65,15 @@ class SpaceMapper:
         if npc is not None:
             self.npc = npc
 
-            # remove strings from data
-            temp = []
-            for array in self.traindata:
-                new_arr = []
-                for item in array:
-                    if not isinstance(item, basestring):
-                        new_arr.append(item)
-                temp.append(numpy.array(new_arr))
-            self.traindata = numpy.array(temp)
+        # Add a fucntion to remove strings from data_Group_4
+        temp = []
+        for array in self.traindata:
+            new_arr = []
+            for item in array:
+                if not isinstance(item, basestring):
+                    new_arr.append(item)
+            temp.append(numpy.array(new_arr))
+        self.traindata = numpy.array(temp)
 
         # learn space and transform train data
         random.seed(254678)
@@ -96,22 +96,21 @@ class SpaceMapper:
     def map_val_space(self, valdata=None, vallabels=None):
         """ map validation space
         """
-
         # initialize validation data    
         if valdata is not None:
             self.valdata = valdata
         if vallabels is not None:
             self.vallabels = vallabels
 
-            # remove strings from data
-            temp = []
-            for array in self.valdata:
-                new_arr = []
-                for item in array:
-                    if not isinstance(item, basestring):
-                        new_arr.append(item)
-                temp.append(numpy.array(new_arr))
-            self.valdata = numpy.array(temp)
+        # Add a function to remove strings from data_Group_4
+        temp = []
+        for array in self.valdata:
+            new_arr = []
+            for item in array:
+                if not isinstance(item, basestring):
+                    new_arr.append(item)
+            temp.append(numpy.array(new_arr))
+        self.valdata = numpy.array(temp)
 
         # transform validation data        
         random.seed(3759137)
@@ -130,8 +129,8 @@ class SpaceMapper:
             self.testdata = testdata
         if testlabels is not None:
             self.testlabels = testlabels
-
-        # remove strings from data
+        
+        #Add a function to remove strings from data_Group_4
         temp = []
         for array in self.testdata:
             new_arr = []
@@ -178,6 +177,8 @@ class SpaceMapper:
     def evaluate_space(self, traindata=None, trainlabels=None, testdata=None, testlabels=None, audiolabels=None):
         """ evaluate space by classification
         """
+        #Fixed spelling mistake for function name_Group_4
+
         # initialize data (features, labels, audiolabels)        
         if self.traindata is None:
             self.learn_train_space(traindata=traindata, trainlabels=trainlabels)

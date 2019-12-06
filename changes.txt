@@ -1,5 +1,6 @@
 librosa 0.6.1
 joblib 0.11
 smoothiescore.py line 298: -  ---> ~
-mfccs.py line 53: librosa.core.logamplitude  ---> librosa.amplitude_to_db
+mfccs.py line 53: librosa.core.logamplitude 
 extract_features.py: set write_output to True
+Add extract_metadata.py --> File read all json files in dataset and converts it into a single csv file

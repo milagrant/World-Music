@@ -31,7 +31,7 @@ def subset_classLabels(class_labels, N=30, seed=None):
     for i_class in unique_class:
         class_inds = numpy.where(class_labels==i_class)[0]
         if len(class_inds)>=N:
-            subset_inds.append(numpy.random.choice(class_inds, int(N), replace=False))
+            subset_inds.append(numpy.random.choice(class_inds, int(N), replace=False)) #Replace N with int(N)_Group_4
     subset_inds = numpy.concatenate(subset_inds, axis=0)
     return subset_inds
 
@@ -39,13 +39,11 @@ def subset_classLabels(class_labels, N=30, seed=None):
 def load_and_post_process_frames(dfrhy, dfmel, dftimb, dfharm, inds=None):
     """ load rhythm, melody, timbre, harmony features and post process
     """
-	
-    print(inds)
     # load features and do some post processing
     frames_rhy = process_frames.load_frames(df=dfrhy.iloc[inds, :], K=2, testclass=testclass)
-    frames_mel = process_frames.load_frames(df=dfmel.iloc[inds, :], nmfpb=True, testclass=testclass)
-    frames_timb = process_frames.load_frames(df=dftimb.iloc[inds, :], testclass=testclass, deltamfcc=True, avelocalframes=True)
-    frames_harm = process_frames.load_frames(df=dfharm.iloc[inds, :], testclass=testclass, alignchroma=True, avelocalframes=True)    
+    frames_mel = process_frames.load_frames(df=dfmel.iloc[inds, :], nmf_pb=True, testclass=testclass) #Change nmfpb to nmf_pb_Group_4
+    frames_timb = process_frames.load_frames(df=dftimb.iloc[inds, :], testclass=testclass, delta_mfcc=True, average_frames=True) #Change deltamfcc,avelocalframes to delta_mfcc,average_frames_Group_4
+    frames_harm = process_frames.load_frames(df=dfharm.iloc[inds, :], testclass=testclass, align_chroma=True, average_frames=True) #Change alignchroma,avelocalframes to align_chroma,average_frames_Group_4
 
     # load labels
     frameclasslabels = numpy.asarray(frames_rhy[testclass].get_values(), dtype='str')
@@ -78,6 +76,6 @@ if __name__ == '__main__':
     val_set = load_and_post_process_frames(dfrhy, dfmel, dftimb, dfharm, inds=valinds)
     test_set = load_and_post_process_frames(dfrhy, dfmel, dftimb, dfharm, inds=testinds)
     
-    write_output = False
+    write_output = True
     if write_output:
         pickle.dump([train_set, val_set, test_set], open(os.path.join('data', 'dataset.pickle'), 'wb'))

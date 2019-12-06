@@ -76,7 +76,8 @@ def load_frames(df=None, testclass=None, K=None, nmf_pb=False, delta_mfcc=False,
         if standard_frames:
             # standardize rows (frames)
             ff = frame_feat.T
-            frame_feat = StandardScaler().fit(ff).transform(ff).T
+            frame_feat_temp = StandardScaler().fit(ff).transform(ff).T
+            frame_feat = pandas.DataFrame(frame_feat_temp) #Changing list to dataframes_Group_4
         
         # append class and audio label to data frame
         if testclass is not None:

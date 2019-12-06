@@ -95,12 +95,12 @@ if __name__ == '__main__':
     
     # confusion matrix
     conf_matrix = metrics.confusion_matrix(real_Y, pred_Y, labels=numpy.unique(real_Y))
-    plot_conf_matrix(conf_matrix, labels=numpy.unique(real_Y))
+    plot_conf_matrix(conf_matrix, labels=numpy.unique(real_Y), figurename="Confusion_Matrix_GCP")
     
     # get outliers
     features, classlabels, audiolabels = average_frames(ldadata, labels, audiolabels)
     outlierpercent, y_pred, MD = get_outliers(features, chi2thr=0.995)
-    plot_outliers(MD, y_pred)
+    plot_outliers(MD, y_pred, figurename="Outliers_GCP")
     
     # print outliers per country
     counts = Counter(classlabels[y_pred])

@@ -295,7 +295,7 @@ def get_chroma(filename = 'test.wav'):
     p['fs'] = sr
     p['step_size'] = int(round(0.005 * p['fs']))  # default hop size 0.005 sec.
     sal, t, f0s = smoothie_salience(y, p)
-    sal = sal[~np.isnan(f0s), :]
+    sal = sal[-np.isnan(f0s), :]
     chroma = wrap_to_octave(sal, p)
     chromasr = p['fs'] / float(p['step_size'])
     return chroma, chromasr

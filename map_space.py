@@ -84,9 +84,9 @@ if __name__ == '__main__':
     best_npc = 30  # optimal performance at 30 principal components
 
     ssm = learn_and_map_space(train_set, val_set, test_set, best_npc=best_npc)
-    data, predictions = get_data_predictions(ssm=None)
+    data, predictions = get_data_predictions(ssm) #Change ssm = None to ssm_Group_4
     
     # write pickle file with transformed train, validation and test set
-    write_output = False
+    write_output = True
     if write_output:
         pickle.dump([data, predictions], open(os.path.join('data', 'feature_space.pickle'), 'wb'))
